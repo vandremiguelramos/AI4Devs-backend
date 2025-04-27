@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos para o Kanban */
+.kanban-container {
+  background-color: #f5f7fa;
+  min-height: calc(100vh - 80px);
+}
+
+.kanban-column {
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-column .card-header {
+  background-color: #e4e9f2;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.candidate-card {
+  border-left: 4px solid #3c82d6;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.candidate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #e8f0fe;
+  border-radius: 50%;
+  color: #3c82d6;
+}
+
+/* Estilos para drag and drop */
+.candidate-card.dragging {
+  opacity: 0.5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.drop-target {
+  border: 2px dashed #3c82d6;
+  background-color: #f0f8ff !important;
+}
+
+.drop-target .card-header {
+  background-color: #d4e5ff;
+}
+
+/* Estilo para cards desabilitados */
+.candidate-card.disabled-drag {
+  border-left-color: #aaa;
+  opacity: 0.8;
+}
+
+.candidate-card.disabled-drag:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.candidate-card.disabled-drag .candidate-icon {
+  background-color: #f0f0f0;
+  color: #888;
+}
